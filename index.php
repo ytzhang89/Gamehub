@@ -12,6 +12,7 @@ include('inc/header.php'); ?>
 			<a href="#">
 				<h2>Hey, I&rsquo;m Mike!</h2>
 				<p>Check Out My Shirts</p>
+				<p>Just for testing!!<p>
 			</a>
 		</div>
 	</div>
