@@ -24,7 +24,8 @@ $d = date("Y-m-d");//year-month-day
 
 
 if ($submit) {
-	echo "3";
+	$query = mysql_query("INSERT INTO users VALUES ('', '$un', '$fn', '$ln', '$em', '$pswd', '$d', '0', 'Write something about you!', '', '')");
+
 $u_check = mysql_query("SELECT username FROM users WHERE username='$un'");
 $check = mysql_num_rows($u_check);
 //check if the user exists
@@ -38,18 +39,15 @@ if ($pswd=$pswd2) {
 //check the length of username/firstname/lastname does not exceed 25 characters
 if (strlen($un)>25 || strlen($fn)>25 || strlen($ln)>25) {
 header("location: index.php?remarks=strlength");
-	echo 3;
 }else{
-	echo 1;
 //check the length of password does not exceed 25 characters
 if (strlen($pswd)>25 || strlen($pswd2)>25) {
 header("location: index.php?remarks=strlength");
 }else{
-	echo 2;
 $pswd = md5($pswd);
 $pswd2 = md5($pswd2);
 
-$query = mysql_query("INSERT INTO users VALUES ('', '$un', '$fn', '$ln', '$em', '$pswd', '$d', '0', 'Write something about you!', '', '')");
+//$query = mysql_query("INSERT INTO users VALUES ('', '$un', '$fn', '$ln', '$em', '$pswd', '$d', '0', 'Write something about you!', '', '')");
 header("location: index.php?remarks=success");
 }
 }
