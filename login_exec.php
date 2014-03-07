@@ -3,7 +3,7 @@
 	session_start();
  
 	//Include database connection details
-	include('connection.php');
+	require_once('connection.php');
  
 	//Array to store validation errors
 	$errmsg_arr = array();

@@ -24,8 +24,6 @@ $d = date("Y-m-d");//year-month-day
 
 
 if ($submit) {
-	$query = mysql_query("INSERT INTO users VALUES ('', '$un', '$fn', '$ln', '$em', '$pswd', '$d', '0', 'Write something about you!', '', '')");
-
 $u_check = mysql_query("SELECT username FROM users WHERE username='$un'");
 $check = mysql_num_rows($u_check);
 //check if the user exists
@@ -47,7 +45,7 @@ header("location: index.php?remarks=strlength");
 $pswd = md5($pswd);
 $pswd2 = md5($pswd2);
 
-//$query = mysql_query("INSERT INTO users VALUES ('', '$un', '$fn', '$ln', '$em', '$pswd', '$d', '0', 'Write something about you!', '', '')");
+$query = mysql_query("INSERT INTO users VALUES ('', '$un', '$fn', '$ln', '$em', '$pswd', '$d', '0', 'Write something about you!', '', '')");
 header("location: index.php?remarks=success");
 }
 }
