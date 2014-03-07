@@ -38,10 +38,12 @@ if ($pswd=$pswd2) {
 if (strlen($un)>25 || strlen($fn)>25 || strlen($ln)>25) {
 header("location: index.php?remarks=strlength");
 }else{
+	echo 1;
 //check the length of password does not exceed 25 characters
 if (strlen($pswd)>25 || strlen($pswd2)>25) {
 header("location: index.php?remarks=strlength");
 }else{
+	echo 2;
 $pswd = md5($pswd);
 $pswd2 = md5($pswd2);
 
