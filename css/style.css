@@ -1,0 +1,120 @@
+.footer-margin-top {
+	margin-top : 10px;
+}
+
+.search_box {
+    padding: 0 15px;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+	top: 5px;
+	position:absolute;
+	margin-left: 0px;
+}
+#search_input {
+    background: white url(../img/search.png) left no-repeat;
+    padding-left: 17px;
+}
+
+/*profile Page CSS*/
+#wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	width: 800px;
+	border-left: 1px solid #DCE5EEE;
+	border-right: 1px solid #DCE5EEE;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#all {
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	width: 1260px;
+	border-left: 1px solid #DCE5EEE;
+	border-right: 1px solid #DCE5EEE;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.textHeader {
+	background-color: #F3F6F9;
+	height: 15px;
+	width: 190px;
+	padding; 5px;
+	border-bottom: 1px solid #DCE5EE;
+	font-weight: 600;
+}	
+.profileLeftSideContent {
+	height: 200px;
+	width: 194px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: justify;
+}
+.postForm {
+	float: right;
+	height: 80px;
+	width: 560px;
+	background-color: #F3F6F9;
+	padding: 5px;
+}
+.profilePosts {
+	float: right;
+	height: 414px;
+	width: 560px;
+	background-color: #FFFFFF;
+	padding: 5px;
+	text-align: justify;
+}
+.profilePosts hr {
+	background-color: #DCE5EE;
+	height: 1px;
+	border: 0px;
+}
+.posted_by {
+	font-weight: 800;
+	color: #000;
+	text-decoration: none;
+}
+.posted_by a {
+	font-weight: 800;
+	color: #000;
+	text-decoration: underline;
+}
+.posted_by a:hover {
+	font-weight: 800;
+	color: #000;
+	text-decoration: underline;
+}
+
+/*hr tags*/
+hr {
+	background-color: #DCE5EE;
+	height: 1px;
+	border: 0px;
+}
+
+.newsFeedPost {
+	width: 70%;
+	background-color: #FFFFFF;
+	border: 1px solid #F3F6F9;
+	padding: 3px;
+}
+.newsFeedPost:hover {
+	width: 70%;
+	background-color: #F3F6F9;
+	border: 1px solid #DCE5EE;
+}
+.newsFeedPostOptions {
+	width: 100%;
+	background-color: #F2F2F2;
+	border: 0px;
+	padding: 5px 5px 5px 5px -10px;
+	margin-bottom: 4px;
+}
+
