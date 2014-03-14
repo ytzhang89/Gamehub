@@ -23,7 +23,7 @@
   <tr>
     <td colspan="2">
 		<div>
-		<?php 
+		  <?php 
 		$remarks=$_GET['remarks'];
 		if ($remarks==null and $remarks=="")
 		{
@@ -104,7 +104,7 @@
   <tr>
     <td colspan="2">
 		 <?php
-		 	//session_start();
+		 	session_start();
 			if( isset($_SESSION['ERRMSG_ARR']) && is_array($_SESSION['ERRMSG_ARR']) && count($_SESSION['ERRMSG_ARR']) >0 ) {	
 			echo '<ul class="err">';
 			foreach($_SESSION['ERRMSG_ARR'] as $msg) {
