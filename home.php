@@ -12,8 +12,40 @@ else
 <h2>Your Newsfeed:</h2>
 </div>
 <?php
+$getposts = mysql_query("SELECT COUNT(*) FROM posts WHERE user_posted_to='$user' ORDER BY id DESC") or die(mysql_error());
+$r = mysql_fetch_row($getposts);
+$numrows = $r[0];
+
+$rowsperpage = 5;
+$totalpages = ceil($numrows / $rowsperpage);
+
+if (isset($_GET['currentpage']) && is_numeric($_GET['currentpage'])) {
+   
+   $currentpage = (int) $_GET['currentpage'];
+} else {
+   
+   $currentpage = 1;
+} 
+
+
+if ($currentpage > $totalpages) {
+   
+   $currentpage = $totalpages;
+} 
+
+if ($currentpage < 1) {
+   
+   $currentpage = 1;
+} 
+
+ 
+$offset = ($currentpage - 1) * $rowsperpage;
+
+
+
+
 //If the user is logged in
-$getposts = mysql_query("SELECT * FROM posts WHERE user_posted_to='$user' ORDER BY id DESC LIMIT 10") or die(mysql_error());
+$getposts = mysql_query("SELECT * FROM posts WHERE user_posted_to='$user' ORDER BY id DESC LIMIT $offset, $rowsperpage") or die(mysql_error());
 while ($row = mysql_fetch_assoc($getposts)) {
 						$id = $row['id'];
 						$body = $row['body'];	
@@ -72,5 +104,44 @@ while ($row = mysql_fetch_assoc($getposts)) {
                                                 </div>
 						";
 }
+$range = 5;
+
+
+if ($currentpage > 1) {
+   
+   echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=1'><<</a> ";
+   
+   $prevpage = $currentpage - 1;
+  
+   echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$prevpage'><</a> ";
+} 
+
+
+for ($x = ($currentpage - $range); $x < (($currentpage + $range) + 1); $x++) {
+   
+   if (($x > 0) && ($x <= $totalpages)) {
+   
+      if ($x == $currentpage) {
+         
+         echo " [<b>$x</b>] ";
+      
+      } else {
+        
+         echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$x'>$x</a> ";
+      } 
+   }  
+} 
+                 
+        
+if ($currentpage != $totalpages) {
+  
+   $nextpage = $currentpage + 1;
+    
+   echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$nextpage'>></a> ";
+   
+   echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$totalpages'>>></a> ";
+} 
+
+
 }
 ?>
